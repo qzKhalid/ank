@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="عنك — نوفر لك جميع ارقام الفنيين و غيرهم" />
+    <title>عنك — نوفر لك جميع ارقام الفنيين و غيرهم</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container topbar-inner">
+        <a class="brand" href="./index.html" aria-label="الانتقال للصفحة الرئيسية">
+          <span class="logo" aria-hidden="true"></span>
+          <span data-site-name>عنك</span>
+        </a>
+        <nav class="nav" aria-label="التنقل">
+          <a class="current" href="./index.html">الرئيسية</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container">
+          <div class="hero-card">
+            <div class="kicker">عنك نوفر لك جميع ارقام الفنيين و غيرهم</div>
+            <h1 class="title">عنك نوفر لك جميع ارقام الفنيين و غيرهم</h1>
+            <p class="subtitle">
+              ابحث حسب الخدمة ثم انسخ رقم الفني بسهولة.
+            </p>
+
+            <div class="search" role="search" aria-label="البحث عن فنيين">
+              <form id="searchForm" autocomplete="off">
+                <div class="field">
+                  <label for="q">بحث سريع</label>
+                  <input class="control" id="q" name="q" type="search" placeholder="مثال: سباك، كهرباء…" />
+                </div>
+
+                <div class="field">
+                  <label for="category">التصنيف</label>
+                  <select class="control" id="category" name="category">
+                    <option value="">الكل</option>
+                  </select>
+                </div>
+
+                <div class="field">
+                  <label for="sort">الترتيب</label>
+                  <select class="control" id="sort" name="sort">
+                    <option value="rating_desc">الأعلى تقييماً</option>
+                    <option value="rating_asc">الأقل تقييماً</option>
+                    <option value="name_asc">الاسم (أ-ي)</option>
+                    <option value="name_desc">الاسم (ي-أ)</option>
+                  </select>
+                </div>
+
+                <div class="field">
+                  <button class="btn btn-primary btn-full" type="submit">بحث</button>
+                  <button class="btn btn-full" id="resetBtn" type="button" style="margin-top:10px;">مسح</button>
+                </div>
+              </form>
+              <p class="hint">المنطقة: <strong data-site-area>المظيلف</strong></p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="workers">
+        <div class="container">
+          <div class="meta-row">
+            <h2 style="margin:0;">الفنيون</h2>
+            <div class="small muted">النتائج: <strong id="resultsCount" style="color:var(--text);">0</strong></div>
+          </div>
+          <div class="grid" id="workersGrid" aria-live="polite"></div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <div class="small muted">© <span id="year"></span> <span data-site-name>عنك</span></div>
+      </div>
+    </footer>
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+    <script src="./app.js"></script>
+
+    <!-- Toast بسيط للتأكيد -->
+    <div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+  </body>
+</html>
